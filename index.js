@@ -20,7 +20,15 @@ function initializeData() {
 
 // TASK: Get elements from the DOM
 const elements = {
-
+  headerBoardName: document.querySelector("#header-board-name"),
+  columnDivs: document.querySelectorAll(".column-div"),
+  filterDiv: document.querySelector("#filterDiv"),
+  hideSideBarBtn: document.querySelector("#hide-side-bar-btn"),
+  showSideBarBtn: document.querySelector("#show-side-bar-btn"),
+  createNewTaskBtn: document.querySelector("#add-new-task-btn"),
+  modalWindow: document.querySelector("#new-task-modal-window"),
+  editTaskModal: document.querySelector(".edit-task-modal-window"),
+  themeSwitch: document.querySelector("#switch"),
 }
 
 let activeBoard = ""
@@ -117,7 +125,7 @@ function styleActiveBoard(boardName) {
 
 
 function addTaskToUI(task) {
-  const column = document.querySelector('.column-div[data-status="${task.status}"]'); 
+  const column = document.querySelector(`.column-div[data-status= "${task.status}"]`); 
   if (!column) {
     console.error(`Column not found for status: ${task.status}`);
     return;
