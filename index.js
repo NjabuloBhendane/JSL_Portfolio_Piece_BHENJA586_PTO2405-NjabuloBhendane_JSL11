@@ -239,6 +239,9 @@ function toggleTheme() {
 
 function openEditTaskModal(task) {
   // Set task details in modal inputs
+  task.title = document.getElementById("edit-title-input").value;
+  task.description = document.getElementById("edit-task-desc-input").value;
+  task.status = document.getElementById("edit-select-status").value;
 
   // Get button elements from the task modal
 
