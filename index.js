@@ -32,8 +32,9 @@ const elements = {
   hideSideBarBtn: document.querySelector("#hide-side-bar-btn"),
   showSideBarBtn: document.querySelector("#show-side-bar-btn"),
   createNewTaskBtn: document.querySelector("#add-new-task-btn"),
-  modalWindow: document.querySelector("#new-task-modal-window"),
-  editTaskModal: document.querySelector(".edit-task-modal-window"),
+  newTaskModalWindow: document.querySelector("#new-task-modal-window"),
+  editTaskModalWindow: document.querySelector(".edit-task-modal-window"),
+  modalWindow: document.querySelector(".modal-window"),
   themeSwitch: document.querySelector("#switch"),
 };
 
@@ -248,8 +249,10 @@ function openEditTaskModal(task) {
  const deleteTaskBtn = document.getElementById("delete-task-btn");
  const cancelEditBtn = document.getElementById("cancel-edit-btn");
 
-  // Call saveTaskChanges upon click of Save Changes button
+ cancelEditBtn.addEventListener( "click",()=> elements.editTaskModalWindow.style.display = "none");
 
+  // Call saveTaskChanges upon click of Save Changes button
+ 
   // Delete task using a helper function and close the task modal
 
   toggleModal(true, elements.editTaskModal); // Show the edit task modal
