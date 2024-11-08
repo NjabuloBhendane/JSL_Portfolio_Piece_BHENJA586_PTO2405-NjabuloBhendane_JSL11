@@ -227,7 +227,10 @@ function toggleSidebar(show) {
   localStorage.setItem("showSideBar", show); // Update local storage
 }
 
-function toggleTheme() {}
+function toggleTheme() {
+  const isLightTheme = document.body.classList.toggle("light-theme");
+  localStorage.setItem("light-theme", isLightTheme ? "enabled" : "disabled");
+}
 
 function openEditTaskModal(task) {
   // Set task details in modal inputs
